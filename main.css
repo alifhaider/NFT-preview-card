@@ -1,0 +1,157 @@
+:root {
+  --softBlue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --darkBlue: hsl(217, 54%, 11%);
+  --cardBlue: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+p {
+  font-size: 18px;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  background-color: hsl(217, 54%, 11%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 325px;
+  background-color: var(--cardBlue);
+  padding: 50px 25px;
+  border-radius: 15px;
+}
+
+.card__image__box {
+  width: 100%;
+  height: 275px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card__image__box:hover::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--cyan);
+  opacity: 0.3;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.card__image__box:hover::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(./images/icon-view.svg);
+  background-size: 20px;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.card__title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card__title:hover {
+  color: var(--cyan);
+}
+
+.card__description {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--softBlue);
+  margin-bottom: 20px;
+}
+
+.card__content__footer {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.card__content__footer__left,
+.card__content__footer__right {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.card__content__footer__left {
+  color: var(--cyan);
+}
+
+.card__content__footer__right {
+  color: var(--softBlue);
+}
+
+.card__footer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  color: var(--softBlue);
+}
+
+.footer__text {
+  font-size: 14px;
+}
+
+.card__footer img {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  margin-right: 16px;
+}
+
+.footer__subtext {
+  cursor: pointer;
+  color: var(--white);
+  transition: all 0.2s ease;
+}
+
+.footer__subtext:hover {
+  color: var(--cyan);
+}
